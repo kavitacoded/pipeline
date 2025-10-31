@@ -6,14 +6,7 @@ pipeline {
                 git url:'https://github.com/kavitacoded/pipeline.git', branch:'main'
             }
         }
-        stage("Cleanup Stage") {
-            steps {
-                bat '''
-                docker rm -f myapp
-                exit /b 0
-                '''
-            }
-        }
+      
         stage("Build Docker image") {
             steps {
                 bat 'docker build -t myimage .'
