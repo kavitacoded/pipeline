@@ -1,4 +1,5 @@
 FROM python:3.14-slim
+RUN pip install --upgrade pip
 RUN pip install streamlit
 RUN mkdir /myapp
 WORKDIR /myapp
